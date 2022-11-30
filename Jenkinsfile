@@ -4,10 +4,11 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        echo 'Building Images ...'
         script {
-          def buildArgs = """-f Dockerfile ."""
-          docker.build("devop-pipeline:v1.0.0.2", buildArgs)
+          echo 'Building Images ...'
+          def buildArgs = """-f src/Dockerfile \
+          ."""
+          docker.build("devop-pipeline:v1.0.1", buildArgs)
         }
       }
     }

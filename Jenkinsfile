@@ -6,7 +6,7 @@ pipeline {
       steps {
         script {
           echo 'Building Images ...'
-          def buildArgs = """-f src/Dockerfile \
+          def buildArgs = """-f Dockerfile \
           ."""
           docker.build("devop-pipeline:v1.0.1", buildArgs)
         }
